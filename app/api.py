@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 
-from core import populate_image
+from core import solid_color_card
 from models import ImageText
 
 
@@ -38,7 +38,7 @@ app.add_middleware(
 @app.post("/instant", tags=["incident"])
 def instant_image(ia: ImageText) -> StreamingResponse:
 
-    img = populate_image(ia)
+    img = solid_color_card(ia)
 
     r_rgb = img.convert("RGB")
     response_image = BytesIO()
