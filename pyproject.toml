@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "card-generator"
+version = "0.0.1"
+description = "API to manipulate and create cards"
+authors = ["Henrique Marchi <henriquems125@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "card_generator"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = {extras = ["websockets"], version = "^0.103.2"}
+uvicorn = {extras = ["standard"], version = "^0.23.2"}
+pillow = "^10.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
